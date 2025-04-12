@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     try {
-      // Create a global variable to aid in debugging
-      window.__AKFAS_APP_ENV__ = {
+      // Create environment variables for debugging without using global window property
+      const appEnv = {
         baseUrl: window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/'),
         isFileProtocol: isFileProtocol()
       };
       
-      console.log("Environment:", window.__AKFAS_APP_ENV__);
+      console.log("Environment:", appEnv);
       
       createRoot(rootElement).render(<App />);
       console.log("App rendered successfully");
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <h1>AKFAS Car Rental</h1>
           <p>An error occurred while loading the application.</p>
           <p>This site needs to be hosted on a web server to function properly.</p>
-          <p>Error details: ${error?.message || 'Unknown error'}</p>
+          <p>Error details: ${error instanceof Error ? error.message : 'Unknown error'}</p>
         </div>
       `;
     }
