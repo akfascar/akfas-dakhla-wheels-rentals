@@ -1,0 +1,3 @@
+
+This folder contains fonts for the 3D welcome animation. 
+The Inter-Bold.woff font is used for the 3D text.
