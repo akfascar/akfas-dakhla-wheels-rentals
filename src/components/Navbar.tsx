@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
-  const [logoPath, setLogoPath] = useState('https://akfascar.com/logo.jpg');
+  const [logoPath, setLogoPath] = useState('./placeholder.svg');
 
   useEffect(() => {
     console.log("Navbar using logo path:", logoPath);
