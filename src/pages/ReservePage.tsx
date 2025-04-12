@@ -11,7 +11,7 @@ const carData = [
   {
     id: 'car1',
     name: 'Renault Clio 5',
-    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800&auto=format&fit=crop',
     price: 35,
     seats: 5,
     fuel: 'Gasoline',
@@ -28,7 +28,7 @@ const carData = [
   {
     id: 'car2',
     name: 'Dacia Stepway',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=800&auto=format&fit=crop',
     price: 40,
     seats: 5,
     fuel: 'Gasoline',
@@ -45,7 +45,7 @@ const carData = [
   {
     id: 'car3',
     name: 'Dacia Sandero',
-    image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=800&auto=format&fit=crop',
     price: 35,
     seats: 5,
     fuel: 'Gasoline',
@@ -62,7 +62,7 @@ const carData = [
   {
     id: 'car4',
     name: 'Dacia Duster',
-    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1594013786645-1ea41dfdd173?q=80&w=800&auto=format&fit=crop',
     price: 45,
     seats: 5,
     fuel: 'Diesel',
@@ -79,7 +79,7 @@ const carData = [
   {
     id: 'car5',
     name: 'Dacia Logan',
-    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1515569067071-ec3b51335dd0?q=80&w=800&auto=format&fit=crop',
     price: 35,
     seats: 5,
     fuel: 'Gasoline',
@@ -97,7 +97,7 @@ const carData = [
   {
     id: 'car6',
     name: 'Skoda Fabia',
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1617624085810-3df2165bd11b?q=80&w=800&auto=format&fit=crop',
     price: 40,
     seats: 5,
     fuel: 'Gasoline',
