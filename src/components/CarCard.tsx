@@ -9,7 +9,6 @@ interface CarCardProps {
   id: string;
   name: string;
   image: string;
-  price?: number; // Made optional so existing code doesn't break
   seats: number;
   fuel: string;
   transmission: string;

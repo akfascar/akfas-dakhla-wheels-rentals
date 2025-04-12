@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -12,7 +11,6 @@ const carData = [
     id: 'car1',
     name: 'Renault Clio 5',
     image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800&auto=format&fit=crop',
-    price: 35,
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -29,7 +27,6 @@ const carData = [
     id: 'car2',
     name: 'Dacia Stepway',
     image: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=800&auto=format&fit=crop',
-    price: 40,
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
@@ -46,7 +43,6 @@ const carData = [
     id: 'car3',
     name: 'Dacia Sandero',
     image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=800&auto=format&fit=crop',
-    price: 35,
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -63,7 +59,6 @@ const carData = [
     id: 'car4',
     name: 'Dacia Duster',
     image: 'https://images.unsplash.com/photo-1594013786645-1ea41dfdd173?q=80&w=800&auto=format&fit=crop',
-    price: 45,
     seats: 5,
     fuel: 'Diesel',
     transmission: 'Automatic',
@@ -80,7 +75,6 @@ const carData = [
     id: 'car5',
     name: 'Dacia Logan',
     image: 'https://images.unsplash.com/photo-1515569067071-ec3b51335dd0?q=80&w=800&auto=format&fit=crop',
-    price: 35,
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -98,7 +92,6 @@ const carData = [
     id: 'car6',
     name: 'Skoda Fabia',
     image: 'https://images.unsplash.com/photo-1617624085810-3df2165bd11b?q=80&w=800&auto=format&fit=crop',
-    price: 40,
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -180,11 +173,8 @@ const ReservePage = () => {
                           />
                           
                           <div className="p-4">
-                            <div className="flex justify-between items-center mb-2">
+                            <div className="mb-2">
                               <h4 className="text-lg font-bold text-akfas-blue">{selectedCar.name}</h4>
-                              <div className="text-akfas-accent font-semibold">
-                                ${selectedCar.price}<span className="text-sm">/day</span>
-                              </div>
                             </div>
                             
                             <div className="grid grid-cols-2 gap-y-2 text-sm text-gray-600 mb-4">
@@ -242,11 +232,8 @@ const ReservePage = () => {
                           />
                         </div>
                         <div className="p-4">
-                          <div className="flex justify-between items-center mb-2">
+                          <div className="mb-2">
                             <h3 className="font-bold text-akfas-blue">{car.name}</h3>
-                            <div className="text-akfas-accent font-semibold">
-                              ${car.price}<span className="text-sm">/day</span>
-                            </div>
                           </div>
                           
                           <div className="grid grid-cols-2 gap-y-1 text-sm text-gray-600">
