@@ -8,13 +8,14 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { Check, MapPin, Car, CreditCard, Clock, Navigation, MessageCircle } from 'lucide-react';
 import LanguageSelector from '@/components/LanguageSelector';
+import { getLocalCarImage } from '@/utils/imageUtils';
 
 // Using working images from the fleet page
 const featuredCars = [
   {
     id: 'car1',
     name: 'Renault Clio 5',
-    image: 'https://akfascar.com/clio.jpg',
+    image: getLocalCarImage('car1'), // Use utility function for consistent image handling
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -23,7 +24,7 @@ const featuredCars = [
   {
     id: 'car2',
     name: 'Dacia Stepway',
-    image: 'https://akfascar.com/stepway.jpg',
+    image: getLocalCarImage('car2'), // Use utility function for consistent image handling
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
@@ -32,7 +33,7 @@ const featuredCars = [
   {
     id: 'car3',
     name: 'Dacia Duster',
-    image: 'https://akfascar.com/duster.jpg',
+    image: getLocalCarImage('car4'), // Use utility function for Duster (car4)
     seats: 5,
     fuel: 'Diesel',
     transmission: 'Automatic',
