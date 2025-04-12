@@ -7,10 +7,10 @@ interface WelcomeAnimationProps {
 
 // Array of car images to display in the welcome animation
 const carImages = [
-  'https://akfascar.com/duster.jpg',
-  'https://akfascar.com/logan.jpg',
-  'https://akfascar.com/skoda.jpg',
-  'https://akfascar.com/sandero.jpg'
+  '/images/cars/duster.jpg',
+  '/images/cars/logan.jpg',
+  '/images/cars/skoda.jpg',
+  '/images/cars/sandero.jpg'
 ];
 
 const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
@@ -69,7 +69,7 @@ const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
     >
       <div className="mb-8">
         <img 
-          src="https://akfascar.com/logoo.jpg" 
+          src="/images/logo.jpg" 
           alt="AKFAS Car Rental Logo" 
           style={{ 
             width: '180px', 

@@ -13,7 +13,7 @@ const featuredCars = [
   {
     id: 'car1',
     name: 'Renault Clio 5',
-    image: 'https://akfascar.com/clio.jpg',
+    image: '/images/cars/clio.jpg',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -22,7 +22,7 @@ const featuredCars = [
   {
     id: 'car2',
     name: 'Dacia Stepway',
-    image: 'https://akfascar.com/stepway.jpg',
+    image: '/images/cars/stepway.jpg',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
@@ -31,7 +31,7 @@ const featuredCars = [
   {
     id: 'car3',
     name: 'Dacia Duster',
-    image: 'https://akfascar.com/duster.jpg',
+    image: '/images/cars/duster.jpg',
     seats: 5,
     fuel: 'Diesel',
     transmission: 'Automatic',
@@ -160,7 +160,7 @@ const Index = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src="https://akfascar.com/dak.png" 
+                  src="/images/dakhla/peninsula.jpg" 
                   alt="Dakhla Peninsula" 
                   className="rounded-lg shadow-xl w-full h-auto object-cover aspect-[4/3]"
                 />
