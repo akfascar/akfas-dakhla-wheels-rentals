@@ -9,12 +9,12 @@ import { Link } from 'react-router-dom';
 import { Check, MapPin, Car, CreditCard, Clock, Navigation, MessageCircle } from 'lucide-react';
 import LanguageSelector from '@/components/LanguageSelector';
 
-// Using existing website images for cars
+// Using working images from the fleet page
 const featuredCars = [
   {
     id: 'car1',
     name: 'Renault Clio 5',
-    image: 'https://akfascar.com/dak3.jpg',
+    image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2070',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -23,7 +23,7 @@ const featuredCars = [
   {
     id: 'car2',
     name: 'Dacia Stepway',
-    image: 'https://akfascar.com/dak2.jpg',
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
@@ -32,7 +32,7 @@ const featuredCars = [
   {
     id: 'car3',
     name: 'Dacia Duster',
-    image: 'http://akfascar.com/dak.png',
+    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070',
     seats: 5,
     fuel: 'Diesel',
     transmission: 'Automatic',
@@ -52,7 +52,7 @@ const Index = () => {
       <Hero
         title="Explore Dakhla with Comfort and Style"
         subtitle="Discover the beauty of Dakhla with our premium car rental service at affordable prices"
-        backgroundImage="https://akfascar.com/dak3.jpg"
+        backgroundImage="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070"
         buttonText="Reserve Now"
         buttonLink="/reserve"
       />
@@ -161,7 +161,7 @@ const Index = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src="http://akfascar.com/dak2.jpg" 
+                  src="https://images.unsplash.com/photo-1517404215738-15263e9f9178?q=80&w=2070" 
                   alt="Dakhla Peninsula" 
                   className="rounded-lg shadow-xl w-full h-auto object-cover aspect-[4/3]"
                   onError={(e) => {
