@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
@@ -15,7 +16,7 @@ const featuredCars = [
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
-    year: 2023
+    airCondition: 'Available'
   },
   {
     id: 'car2',
@@ -24,16 +25,16 @@ const featuredCars = [
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
-    year: 2022
+    airCondition: 'Available'
   },
   {
     id: 'car3',
     name: 'Dacia Duster',
-    image: 'https://images.unsplash.com/photo-1594013786645-1ea41dfdd173?q=80&w=800&auto=format&fit=crop',
+    image: 'https://akfascar.com/duster.jpg',
     seats: 5,
     fuel: 'Diesel',
     transmission: 'Automatic',
-    year: 2022
+    airCondition: 'Available'
   }
 ];
 

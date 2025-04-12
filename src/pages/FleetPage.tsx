@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -32,7 +31,7 @@ const cars = {
     {
       id: 'car3',
       name: 'Dacia Sandero',
-      image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/sandero.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -41,7 +40,7 @@ const cars = {
     {
       id: 'car4',
       name: 'Dacia Duster',
-      image: 'https://images.unsplash.com/photo-1594013786645-1ea41dfdd173?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/duster.jpg',
       seats: 5,
       fuel: 'Diesel',
       transmission: 'Automatic',
@@ -50,7 +49,7 @@ const cars = {
     {
       id: 'car5',
       name: 'Dacia Logan',
-      image: 'https://images.unsplash.com/photo-1515569067071-ec3b51335dd0?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/logan.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -60,7 +59,7 @@ const cars = {
     {
       id: 'car6',
       name: 'Skoda Fabia',
-      image: 'https://images.unsplash.com/photo-1617624085810-3df2165bd11b?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/skoda.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -80,7 +79,7 @@ const cars = {
     {
       id: 'car4',
       name: 'Dacia Duster',
-      image: 'https://images.unsplash.com/photo-1594013786645-1ea41dfdd173?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/duster.jpg',
       seats: 5,
       fuel: 'Diesel',
       transmission: 'Automatic',
@@ -100,7 +99,7 @@ const cars = {
     {
       id: 'car3',
       name: 'Dacia Sandero',
-      image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/sandero.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -109,7 +108,7 @@ const cars = {
     {
       id: 'car5',
       name: 'Dacia Logan',
-      image: 'https://images.unsplash.com/photo-1515569067071-ec3b51335dd0?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/logan.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -119,7 +118,7 @@ const cars = {
     {
       id: 'car6',
       name: 'Skoda Fabia',
-      image: 'https://images.unsplash.com/photo-1617624085810-3df2165bd11b?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/skoda.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -139,7 +138,7 @@ const cars = {
     {
       id: 'car3',
       name: 'Dacia Sandero',
-      image: 'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/sandero.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -148,7 +147,7 @@ const cars = {
     {
       id: 'car5',
       name: 'Dacia Logan',
-      image: 'https://images.unsplash.com/photo-1515569067071-ec3b51335dd0?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/logan.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -158,7 +157,7 @@ const cars = {
     {
       id: 'car6',
       name: 'Skoda Fabia',
-      image: 'https://images.unsplash.com/photo-1617624085810-3df2165bd11b?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/skoda.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -169,7 +168,7 @@ const cars = {
     {
       id: 'car4',
       name: 'Dacia Duster',
-      image: 'https://images.unsplash.com/photo-1594013786645-1ea41dfdd173?q=80&w=800&auto=format&fit=crop',
+      image: 'https://akfascar.com/duster.jpg',
       seats: 5,
       fuel: 'Diesel',
       transmission: 'Automatic',
