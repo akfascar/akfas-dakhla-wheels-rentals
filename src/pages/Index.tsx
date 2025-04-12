@@ -32,7 +32,7 @@ const featuredCars = [
   {
     id: 'car3',
     name: 'Dacia Duster',
-    image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070',
+    image: 'https://akfascar.com/duster.jpg',
     seats: 5,
     fuel: 'Diesel',
     transmission: 'Automatic',
