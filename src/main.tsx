@@ -10,6 +10,9 @@ const isFileProtocol = () => {
 
 // Make sure the DOM is loaded before rendering
 document.addEventListener('DOMContentLoaded', () => {
+  // Add a console log to check if the script is running
+  console.log("DOM Content Loaded, initializing application");
+  
   const rootElement = document.getElementById("root");
   if (rootElement) {
     // Clear any fallback content if present
@@ -18,6 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     try {
+      // Create a global variable to aid in debugging
+      window.__AKFAS_APP_ENV__ = {
+        baseUrl: window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/'),
+        isFileProtocol: isFileProtocol()
+      };
+      
+      console.log("Environment:", window.__AKFAS_APP_ENV__);
+      
       createRoot(rootElement).render(<App />);
       console.log("App rendered successfully");
     } catch (error) {
@@ -34,4 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     console.error("Root element not found");
   }
+});
+
+// Add a global error handler
+window.addEventListener('error', (event) => {
+  console.error("Global error caught:", event.error || event.message);
 });

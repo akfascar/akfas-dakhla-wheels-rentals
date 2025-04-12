@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [logoError, setLogoError] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
@@ -16,13 +17,13 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src="images/logo.jpg" 
+              src={logoError ? './placeholder.svg' : './images/logo.jpg'} 
               alt="AKFAS Car Rental Logo" 
               className="h-12 w-auto"
               onError={(e) => {
-                console.error("Logo failed to load");
+                console.error("Logo failed to load", e);
+                setLogoError(true);
                 e.currentTarget.onerror = null;
-                e.currentTarget.src = 'placeholder.svg';
               }}
             />
           </Link>

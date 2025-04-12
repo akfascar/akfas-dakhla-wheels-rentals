@@ -5,19 +5,23 @@ interface WelcomeAnimationProps {
   onComplete: () => void;
 }
 
-// Array of car images to display in the welcome animation
+// Array of car images to display in the welcome animation with relative paths
 const carImages = [
-  'images/cars/duster.jpg',
-  'images/cars/logan.jpg',
-  'images/cars/skoda.jpg',
-  'images/cars/sandero.jpg'
+  './images/cars/duster.jpg',
+  './images/cars/logan.jpg',
+  './images/cars/skoda.jpg',
+  './images/cars/sandero.jpg'
 ];
 
 const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
   const [opacity, setOpacity] = useState<number>(1);
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
+  const [imageFailed, setImageFailed] = useState<boolean>(false);
+  const [logoFailed, setLogoFailed] = useState<boolean>(false);
   
   useEffect(() => {
+    console.log("WelcomeAnimation mounted");
+    
     // Set up image rotation
     const imageRotation = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % carImages.length);
@@ -48,6 +52,18 @@ const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
     };
   }, [onComplete]);
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    console.error("Image failed to load:", e.currentTarget.src);
+    setImageFailed(true);
+    e.currentTarget.onerror = null;
+  };
+
+  const handleLogoError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    console.error("Logo failed to load:", e.currentTarget.src);
+    setLogoFailed(true);
+    e.currentTarget.onerror = null;
+  };
+
   return (
     <div 
       style={{ 
@@ -69,7 +85,7 @@ const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
     >
       <div className="mb-8">
         <img 
-          src="images/logo.jpg" 
+          src={logoFailed ? './placeholder.svg' : './images/logo.jpg'} 
           alt="AKFAS Car Rental Logo" 
           style={{ 
             width: '180px', 
@@ -77,11 +93,7 @@ const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
             borderRadius: '8px',
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
           }} 
-          onError={(e) => {
-            console.error("Image failed to load:", e.currentTarget.src);
-            e.currentTarget.onerror = null;
-            e.currentTarget.src = 'placeholder.svg';
-          }}
+          onError={handleLogoError}
         />
       </div>
       
@@ -119,31 +131,42 @@ const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
           borderRadius: '8px',
           boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
           marginBottom: '2rem',
-          position: 'relative'
+          position: 'relative',
+          backgroundColor: '#1a2e42'
         }}
       >
-        {carImages.map((image, index) => (
-          <img 
-            key={index}
-            src={image} 
-            alt={`AKFAS Fleet Car ${index + 1}`} 
-            style={{ 
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
+        {!imageFailed ? (
+          carImages.map((image, index) => (
+            <img 
+              key={index}
+              src={image} 
+              alt={`AKFAS Fleet Car ${index + 1}`} 
+              style={{ 
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                opacity: index === currentImageIndex ? 1 : 0,
+                transition: 'opacity 0.5s ease-in-out'
+              }} 
+              onError={handleImageError}
+            />
+          ))
+        ) : (
+          <div 
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               height: '100%',
-              objectFit: 'cover',
-              opacity: index === currentImageIndex ? 1 : 0,
-              transition: 'opacity 0.5s ease-in-out'
-            }} 
-            onError={(e) => {
-              console.error("Image failed to load:", e.currentTarget.src);
-              e.currentTarget.onerror = null;
-              e.currentTarget.src = 'placeholder.svg';
+              color: '#ffffff'
             }}
-          />
-        ))}
+          >
+            Premium Car Fleet
+          </div>
+        )}
       </div>
       
       <div 
