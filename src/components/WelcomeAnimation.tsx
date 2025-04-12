@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Text, Stars, OrbitControls } from '@react-three/drei';
 import { Color, Group } from 'three';
+import * as THREE from 'three';
 
 interface TextProps {
   children: string;
@@ -45,6 +46,13 @@ const AnimatedText: React.FC<TextProps> = ({
 
 const Logo: React.FC = () => {
   const logoRef = useRef<Group>(null);
+  const [texture, setTexture] = useState<THREE.Texture | null>(null);
+  
+  useEffect(() => {
+    new THREE.TextureLoader().load('https://akfascar.com/logoo.jpg', (loadedTexture) => {
+      setTexture(loadedTexture);
+    });
+  }, []);
 
   useFrame(({ clock }) => {
     if (logoRef.current) {
@@ -52,15 +60,15 @@ const Logo: React.FC = () => {
     }
   });
 
+  if (!texture) {
+    return null;
+  }
+
   return (
     <group ref={logoRef}>
       <mesh position={[0, 0, 0]}>
-        <sphereGeometry args={[1, 32, 32]} />
-        <meshStandardMaterial color="#1A3A5A" metalness={0.6} roughness={0.2} />
-      </mesh>
-      <mesh position={[0, 0, 0]} scale={[1.5, 0.1, 0.5]} rotation={[0, Math.PI * 0.25, 0]}>
-        <boxGeometry />
-        <meshStandardMaterial color="#D97941" metalness={0.5} roughness={0.2} />
+        <planeGeometry args={[2.5, 1.5]} />
+        <meshBasicMaterial map={texture} transparent />
       </mesh>
     </group>
   );
@@ -125,7 +133,7 @@ const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
         </AnimatedText>
         
         <AnimatedText 
-          position={[0, 0.8, 0]} 
+          position={[0, -1.2, 0]} 
           fontSize={1} 
           color="#D97941"
           rotation={[0, 0.1, 0]}
@@ -134,7 +142,7 @@ const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
         </AnimatedText>
         
         <AnimatedText 
-          position={[0, -0.5, 0]} 
+          position={[0, -2, 0]} 
           fontSize={0.4} 
           color="#E6D2B5"
         >

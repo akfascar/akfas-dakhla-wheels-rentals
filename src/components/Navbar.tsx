@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Car } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -14,9 +14,12 @@ const Navbar = () => {
     <header className="bg-white sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <Car className="h-8 w-8 text-akfas-blue" />
-            <span className="text-xl font-bold text-akfas-blue">AKFAS Car Rental</span>
+          <Link to="/" className="flex items-center">
+            <img 
+              src="https://akfascar.com/logoo.jpg" 
+              alt="AKFAS Car Rental Logo" 
+              className="h-12 w-auto"
+            />
           </Link>
           
           {/* Desktop Menu */}
