@@ -10,87 +10,105 @@ import { Car, Check } from 'lucide-react';
 const carData = [
   {
     id: 'car1',
-    name: 'Toyota RAV4',
-    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop',
-    price: 45,
+    name: 'Renault Clio 5',
+    image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
+    price: 35,
     seats: 5,
     fuel: 'Gasoline',
-    transmission: 'Automatic',
+    transmission: 'Manual',
     year: 2023,
     features: [
       '5 Seats',
       'Air Conditioning',
       'Bluetooth',
-      'Backup Camera',
-      'USB Charging Ports'
-    ]
-  },
-  {
-    id: 'car2',
-    name: 'Dacia Duster',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop',
-    price: 35,
-    seats: 5,
-    fuel: 'Diesel',
-    transmission: 'Manual',
-    year: 2022,
-    features: [
-      '5 Seats',
-      'Air Conditioning',
-      'Roof Rack',
-      'Bluetooth',
+      'USB Charging Ports',
       'Fuel Efficient'
     ]
   },
   {
-    id: 'car3',
-    name: 'Hyundai Tucson',
-    image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop',
-    price: 50,
+    id: 'car2',
+    name: 'Dacia Stepway',
+    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop',
+    price: 40,
     seats: 5,
-    fuel: 'Hybrid',
+    fuel: 'Gasoline',
     transmission: 'Automatic',
+    year: 2022,
+    features: [
+      '5 Seats',
+      'Air Conditioning',
+      'Bluetooth',
+      'Automatic Transmission',
+      'Roof Rack'
+    ]
+  },
+  {
+    id: 'car3',
+    name: 'Dacia Sandero',
+    image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop',
+    price: 35,
+    seats: 5,
+    fuel: 'Gasoline',
+    transmission: 'Manual',
     year: 2023,
     features: [
       '5 Seats',
-      'Climate Control',
-      'Navigation System',
-      'Panoramic Sunroof',
-      'Advanced Safety Features'
+      'Air Conditioning',
+      'Bluetooth',
+      'Fuel Efficient',
+      'Spacious Trunk'
     ]
   },
   {
     id: 'car4',
-    name: 'Renault Clio',
+    name: 'Dacia Duster',
+    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop',
+    price: 45,
+    seats: 5,
+    fuel: 'Diesel',
+    transmission: 'Automatic',
+    year: 2022,
+    features: [
+      '5 Seats',
+      'Air Conditioning',
+      'High Clearance',
+      'Automatic Transmission',
+      'Spacious Interior'
+    ]
+  },
+  {
+    id: 'car5',
+    name: 'Dacia Logan',
     image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
-    price: 25,
+    price: 35,
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
     year: 2021,
+    color: 'Grey',
+    features: [
+      '5 Seats',
+      'Air Conditioning',
+      'Spacious Trunk',
+      'Great for Families',
+      'Fuel Efficient'
+    ]
+  },
+  {
+    id: 'car6',
+    name: 'Skoda Fabia',
+    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop',
+    price: 40,
+    seats: 5,
+    fuel: 'Gasoline',
+    transmission: 'Manual',
+    year: 2022,
     features: [
       '5 Seats',
       'Air Conditioning',
       'Bluetooth',
       'Compact Size',
-      'Fuel Efficient'
-    ]
-  },
-  {
-    id: 'car5',
-    name: 'Ford Ranger',
-    image: 'https://images.unsplash.com/photo-1551830820-330a71b99659?q=80&w=800&auto=format&fit=crop',
-    price: 55,
-    seats: 5,
-    fuel: 'Diesel',
-    transmission: 'Automatic',
-    year: 2022,
-    features: [
-      '5 Seats',
-      '4x4 Drive',
-      'Towing Capability',
-      'Cargo Bed',
-      'Off-road Performance'
+      'Modern Interior'
     ]
   }
 ];

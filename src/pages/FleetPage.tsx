@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -13,129 +12,182 @@ const cars = {
   all: [
     {
       id: 'car1',
-      name: 'Toyota RAV4',
-      image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop',
-      price: 45,
+      name: 'Renault Clio 5',
+      image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
+      price: 35,
       seats: 5,
       fuel: 'Gasoline',
-      transmission: 'Automatic',
+      transmission: 'Manual',
       year: 2023
     },
     {
       id: 'car2',
-      name: 'Dacia Duster',
+      name: 'Dacia Stepway',
       image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop',
-      price: 35,
+      price: 40,
       seats: 5,
-      fuel: 'Diesel',
-      transmission: 'Manual',
+      fuel: 'Gasoline',
+      transmission: 'Automatic',
       year: 2022
     },
     {
       id: 'car3',
-      name: 'Hyundai Tucson',
+      name: 'Dacia Sandero',
       image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop',
-      price: 50,
+      price: 35,
       seats: 5,
-      fuel: 'Hybrid',
-      transmission: 'Automatic',
+      fuel: 'Gasoline',
+      transmission: 'Manual',
       year: 2023
     },
     {
       id: 'car4',
-      name: 'Renault Clio',
-      image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
-      price: 25,
-      seats: 5,
-      fuel: 'Gasoline',
-      transmission: 'Manual',
-      year: 2021
-    },
-    {
-      id: 'car5',
-      name: 'Ford Ranger',
-      image: 'https://images.unsplash.com/photo-1551830820-330a71b99659?q=80&w=800&auto=format&fit=crop',
-      price: 55,
+      name: 'Dacia Duster',
+      image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop',
+      price: 45,
       seats: 5,
       fuel: 'Diesel',
       transmission: 'Automatic',
       year: 2022
     },
     {
+      id: 'car5',
+      name: 'Dacia Logan',
+      image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
+      price: 35,
+      seats: 5,
+      fuel: 'Gasoline',
+      transmission: 'Manual',
+      year: 2021,
+      color: 'Grey'
+    },
+    {
       id: 'car6',
-      name: 'Mercedes-Benz C-Class',
-      image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=800&auto=format&fit=crop',
-      price: 70,
+      name: 'Skoda Fabia',
+      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop',
+      price: 40,
+      seats: 5,
+      fuel: 'Gasoline',
+      transmission: 'Manual',
+      year: 2022
+    }
+  ],
+  automatic: [
+    {
+      id: 'car2',
+      name: 'Dacia Stepway',
+      image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop',
+      price: 40,
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Automatic',
+      year: 2022
+    },
+    {
+      id: 'car4',
+      name: 'Dacia Duster',
+      image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop',
+      price: 45,
+      seats: 5,
+      fuel: 'Diesel',
+      transmission: 'Automatic',
+      year: 2022
+    }
+  ],
+  manual: [
+    {
+      id: 'car1',
+      name: 'Renault Clio 5',
+      image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
+      price: 35,
+      seats: 5,
+      fuel: 'Gasoline',
+      transmission: 'Manual',
+      year: 2023
+    },
+    {
+      id: 'car3',
+      name: 'Dacia Sandero',
+      image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop',
+      price: 35,
+      seats: 5,
+      fuel: 'Gasoline',
+      transmission: 'Manual',
+      year: 2023
+    },
+    {
+      id: 'car5',
+      name: 'Dacia Logan',
+      image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
+      price: 35,
+      seats: 5,
+      fuel: 'Gasoline',
+      transmission: 'Manual',
+      year: 2021,
+      color: 'Grey'
+    },
+    {
+      id: 'car6',
+      name: 'Skoda Fabia',
+      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop',
+      price: 40,
+      seats: 5,
+      fuel: 'Gasoline',
+      transmission: 'Manual',
+      year: 2022
+    }
+  ],
+  economy: [
+    {
+      id: 'car1',
+      name: 'Renault Clio 5',
+      image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
+      price: 35,
+      seats: 5,
+      fuel: 'Gasoline',
+      transmission: 'Manual',
+      year: 2023
+    },
+    {
+      id: 'car3',
+      name: 'Dacia Sandero',
+      image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop',
+      price: 35,
+      seats: 5,
+      fuel: 'Gasoline',
+      transmission: 'Manual',
+      year: 2023
+    },
+    {
+      id: 'car5',
+      name: 'Dacia Logan',
+      image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
+      price: 35,
+      seats: 5,
+      fuel: 'Gasoline',
+      transmission: 'Manual',
+      year: 2021,
+      color: 'Grey'
+    },
+    {
+      id: 'car6',
+      name: 'Skoda Fabia',
+      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=800&auto=format&fit=crop',
+      price: 40,
+      seats: 5,
+      fuel: 'Gasoline',
+      transmission: 'Manual',
       year: 2022
     }
   ],
   suv: [
     {
-      id: 'car1',
-      name: 'Toyota RAV4',
+      id: 'car4',
+      name: 'Dacia Duster',
       image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop',
       price: 45,
       seats: 5,
-      fuel: 'Gasoline',
-      transmission: 'Automatic',
-      year: 2023
-    },
-    {
-      id: 'car2',
-      name: 'Dacia Duster',
-      image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop',
-      price: 35,
-      seats: 5,
       fuel: 'Diesel',
-      transmission: 'Manual',
-      year: 2022
-    },
-    {
-      id: 'car3',
-      name: 'Hyundai Tucson',
-      image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop',
-      price: 50,
-      seats: 5,
-      fuel: 'Hybrid',
-      transmission: 'Automatic',
-      year: 2023
-    }
-  ],
-  compact: [
-    {
-      id: 'car4',
-      name: 'Renault Clio',
-      image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=800&auto=format&fit=crop',
-      price: 25,
-      seats: 5,
-      fuel: 'Gasoline',
-      transmission: 'Manual',
-      year: 2021
-    }
-  ],
-  pickup: [
-    {
-      id: 'car5',
-      name: 'Ford Ranger',
-      image: 'https://images.unsplash.com/photo-1551830820-330a71b99659?q=80&w=800&auto=format&fit=crop',
-      price: 55,
-      seats: 5,
-      fuel: 'Diesel',
-      transmission: 'Automatic',
-      year: 2022
-    }
-  ],
-  luxury: [
-    {
-      id: 'car6',
-      name: 'Mercedes-Benz C-Class',
-      image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?q=80&w=800&auto=format&fit=crop',
-      price: 70,
-      seats: 5,
-      fuel: 'Gasoline',
       transmission: 'Automatic',
       year: 2022
     }
@@ -168,10 +220,10 @@ const FleetPage = () => {
             <div className="flex justify-center mb-8">
               <TabsList>
                 <TabsTrigger value="all">All Vehicles</TabsTrigger>
-                <TabsTrigger value="suv">SUVs</TabsTrigger>
-                <TabsTrigger value="compact">Compact</TabsTrigger>
-                <TabsTrigger value="pickup">Pickup</TabsTrigger>
-                <TabsTrigger value="luxury">Luxury</TabsTrigger>
+                <TabsTrigger value="automatic">Automatic</TabsTrigger>
+                <TabsTrigger value="manual">Manual</TabsTrigger>
+                <TabsTrigger value="economy">Economy</TabsTrigger>
+                <TabsTrigger value="suv">SUV</TabsTrigger>
               </TabsList>
             </div>
             
@@ -183,33 +235,33 @@ const FleetPage = () => {
               </div>
             </TabsContent>
             
+            <TabsContent value="automatic">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {cars.automatic.map((car) => (
+                  <CarCard key={car.id} {...car} />
+                ))}
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="manual">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {cars.manual.map((car) => (
+                  <CarCard key={car.id} {...car} />
+                ))}
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="economy">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {cars.economy.map((car) => (
+                  <CarCard key={car.id} {...car} />
+                ))}
+              </div>
+            </TabsContent>
+            
             <TabsContent value="suv">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {cars.suv.map((car) => (
-                  <CarCard key={car.id} {...car} />
-                ))}
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="compact">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {cars.compact.map((car) => (
-                  <CarCard key={car.id} {...car} />
-                ))}
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="pickup">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {cars.pickup.map((car) => (
-                  <CarCard key={car.id} {...car} />
-                ))}
-              </div>
-            </TabsContent>
-            
-            <TabsContent value="luxury">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {cars.luxury.map((car) => (
                   <CarCard key={car.id} {...car} />
                 ))}
               </div>
