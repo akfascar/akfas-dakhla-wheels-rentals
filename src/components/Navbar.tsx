@@ -16,9 +16,14 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src="https://akfascar.com/logoo.jpg" 
+              src="images/logo.jpg" 
               alt="AKFAS Car Rental Logo" 
               className="h-12 w-auto"
+              onError={(e) => {
+                console.error("Logo failed to load");
+                e.currentTarget.onerror = null;
+                e.currentTarget.src = 'placeholder.svg';
+              }}
             />
           </Link>
           
