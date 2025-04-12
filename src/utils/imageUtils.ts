@@ -35,14 +35,14 @@ export const fallbackImages = {
  * This will use local images rather than external ones that might fail
  */
 export const getLocalCarImage = (carId: string): string => {
-  // Map car IDs to better car model images
+  // Map car IDs to direct akfascar.com images
   const carImages: Record<string, string> = {
-    car1: 'https://images.unsplash.com/photo-1665887080829-77e1646b1c04?w=800&auto=format&fit=crop', // Renault Clio 5
+    car1: 'https://akfascar.com/clio.jpg', // Renault Clio 5
     car2: 'https://images.unsplash.com/photo-1630080642366-21cc2930ec3e?w=800&auto=format&fit=crop', // Dacia Stepway
-    car3: 'https://images.unsplash.com/photo-1619775761567-7b736e9de9d4?w=800&auto=format&fit=crop', // Dacia Sandero
+    car3: 'https://akfascar.com/sandero.jpg', // Dacia Sandero
     car4: 'https://images.unsplash.com/photo-1647470221285-0e85668aa3e9?w=800&auto=format&fit=crop', // Dacia Duster
-    car5: 'https://images.unsplash.com/photo-1627076929474-e50898a4f265?w=800&auto=format&fit=crop', // Dacia Logan
-    car6: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop', // Skoda Fabia
+    car5: 'https://akfascar.com/logan.jpg', // Dacia Logan
+    car6: 'https://akfascar.com/skoda.jpg', // Skoda Fabia
   };
 
   return carImages[carId] || fallbackImages.car;

@@ -11,7 +11,7 @@ const Navbar = () => {
   const [logoSrc, setLogoSrc] = useState<string>('./placeholder.svg');
   
   useEffect(() => {
-    // Try to load the real logo but have a fallback ready
+    // Use the direct link to the logo
     const img = new Image();
     img.onload = () => {
       setLogoSrc('https://akfascar.com/logo.jpg');
