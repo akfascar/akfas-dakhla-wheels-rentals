@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
         <TooltipTrigger asChild>
           <button
             onClick={handleWhatsAppRedirect}
-            className="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white rounded-full p-4 shadow-lg z-50 transition-transform hover:scale-110"
+            className="fixed bottom-6 right-6 bg-green-600 hover:bg-green-700 text-white rounded-full p-4 shadow-lg z-50 transition-all hover:scale-110 animate-pulse hover:animate-none"
             aria-label="Contact us on WhatsApp"
           >
             <MessageCircle size={28} />

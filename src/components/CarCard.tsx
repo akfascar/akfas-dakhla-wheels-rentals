@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Users, Fuel, GaugeCircle, Calendar } from 'lucide-react';
+import { Users, Fuel, GaugeCircle, Wind } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 
@@ -12,7 +12,7 @@ interface CarCardProps {
   seats: number;
   fuel: string;
   transmission: string;
-  year: number;
+  airCondition: string;
 }
 
 const CarCard: React.FC<CarCardProps> = ({
@@ -22,7 +22,7 @@ const CarCard: React.FC<CarCardProps> = ({
   seats,
   fuel,
   transmission,
-  year
+  airCondition
 }) => {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
@@ -52,8 +52,8 @@ const CarCard: React.FC<CarCardProps> = ({
             <span>{transmission}</span>
           </div>
           <div className="flex items-center gap-2">
-            <Calendar size={16} className="text-akfas-accent" />
-            <span>{year}</span>
+            <Wind size={16} className="text-akfas-accent" />
+            <span>{airCondition}</span>
           </div>
         </div>
       </CardContent>

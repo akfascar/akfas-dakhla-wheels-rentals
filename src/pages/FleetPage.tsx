@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
@@ -17,7 +18,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2023
+      airCondition: 'Available'
     },
     {
       id: 'car2',
@@ -26,7 +27,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Automatic',
-      year: 2022
+      airCondition: 'Available'
     },
     {
       id: 'car3',
@@ -35,7 +36,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2023
+      airCondition: 'Available'
     },
     {
       id: 'car4',
@@ -44,7 +45,7 @@ const cars = {
       seats: 5,
       fuel: 'Diesel',
       transmission: 'Automatic',
-      year: 2022
+      airCondition: 'Available'
     },
     {
       id: 'car5',
@@ -53,7 +54,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2021,
+      airCondition: 'Available',
       color: 'Grey'
     },
     {
@@ -63,7 +64,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2022
+      airCondition: 'Available'
     }
   ],
   automatic: [
@@ -74,7 +75,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Automatic',
-      year: 2022
+      airCondition: 'Available'
     },
     {
       id: 'car4',
@@ -83,7 +84,7 @@ const cars = {
       seats: 5,
       fuel: 'Diesel',
       transmission: 'Automatic',
-      year: 2022
+      airCondition: 'Available'
     }
   ],
   manual: [
@@ -94,7 +95,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2023
+      airCondition: 'Available'
     },
     {
       id: 'car3',
@@ -103,7 +104,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2023
+      airCondition: 'Available'
     },
     {
       id: 'car5',
@@ -112,7 +113,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2021,
+      airCondition: 'Available',
       color: 'Grey'
     },
     {
@@ -122,7 +123,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2022
+      airCondition: 'Available'
     }
   ],
   economy: [
@@ -133,7 +134,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2023
+      airCondition: 'Available'
     },
     {
       id: 'car3',
@@ -142,7 +143,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2023
+      airCondition: 'Available'
     },
     {
       id: 'car5',
@@ -151,7 +152,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2021,
+      airCondition: 'Available',
       color: 'Grey'
     },
     {
@@ -161,7 +162,7 @@ const cars = {
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
-      year: 2022
+      airCondition: 'Available'
     }
   ],
   suv: [
@@ -172,7 +173,7 @@ const cars = {
       seats: 5,
       fuel: 'Diesel',
       transmission: 'Automatic',
-      year: 2022
+      airCondition: 'Available'
     }
   ]
 };
