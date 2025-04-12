@@ -9,12 +9,12 @@ import { Link } from 'react-router-dom';
 import { Check, MapPin, Car, CreditCard, Clock, Navigation, MessageCircle } from 'lucide-react';
 import LanguageSelector from '@/components/LanguageSelector';
 
-// Using Unsplash images for cars
+// Using existing website images for cars
 const featuredCars = [
   {
     id: 'car1',
     name: 'Renault Clio 5',
-    image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7',
+    image: 'https://akfascar.com/dak3.jpg',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -23,7 +23,7 @@ const featuredCars = [
   {
     id: 'car2',
     name: 'Dacia Stepway',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+    image: 'https://akfascar.com/dak2.jpg',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
@@ -32,7 +32,7 @@ const featuredCars = [
   {
     id: 'car3',
     name: 'Dacia Duster',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
+    image: 'http://akfascar.com/dak.png',
     seats: 5,
     fuel: 'Diesel',
     transmission: 'Automatic',
