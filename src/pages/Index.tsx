@@ -161,7 +161,7 @@ const Index = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src="https://akfascar.com/dak.png" 
+                  src="http://akfascar.com/dak2.jpg" 
                   alt="Dakhla Peninsula" 
                   className="rounded-lg shadow-xl w-full h-auto object-cover aspect-[4/3]"
                   onError={(e) => {
