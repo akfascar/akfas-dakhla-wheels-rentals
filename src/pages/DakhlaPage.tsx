@@ -16,7 +16,7 @@ const DakhlaPage = () => {
       <Hero
         title="Discover Dakhla"
         subtitle="A paradise between desert and ocean in the Western Sahara of Morocco"
-        backgroundImage="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+        backgroundImage="https://akfascar.com/dakhla-bg.jpg"
         buttonText="Reserve a Car to Explore"
         buttonLink="/reserve"
       />
