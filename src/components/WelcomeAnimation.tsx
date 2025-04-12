@@ -77,6 +77,11 @@ const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
             borderRadius: '8px',
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)'
           }} 
+          onError={(e) => {
+            console.error("Image failed to load:", e.currentTarget.src);
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = 'placeholder.svg';
+          }}
         />
       </div>
       
@@ -132,6 +137,11 @@ const WelcomeAnimation: React.FC<WelcomeAnimationProps> = ({ onComplete }) => {
               opacity: index === currentImageIndex ? 1 : 0,
               transition: 'opacity 0.5s ease-in-out'
             }} 
+            onError={(e) => {
+              console.error("Image failed to load:", e.currentTarget.src);
+              e.currentTarget.onerror = null;
+              e.currentTarget.src = 'placeholder.svg';
+            }}
           />
         ))}
       </div>

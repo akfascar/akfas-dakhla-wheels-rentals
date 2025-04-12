@@ -20,12 +20,34 @@
     
     <link rel="icon" href="./images/logo.jpg" type="image/jpeg" />
     <base href="./" />
+    
+    <!-- Include React and ReactDOM from CDN for local development -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Fallback content in case JavaScript fails to load -->
+      <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
+        <img src="./images/logo.jpg" alt="AKFAS Car Rental Logo" style="width: 180px; border-radius: 8px; margin-bottom: 20px;">
+        <h1>AKFAS Car Rental</h1>
+        <p>Premium car rental service in Dakhla, Morocco</p>
+        <p>If you're seeing this message, please make sure JavaScript is enabled in your browser.</p>
+        <p>For the best experience, please host this site on a web server.</p>
+        <p>Contact us: <a href="https://wa.me/212661211237">WhatsApp</a></p>
+      </div>
+    </div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="./src/main.tsx"></script>
+    
+    <!-- Fallback script for direct file opening -->
+    <script>
+      // Check if the page is loaded from file protocol
+      if (window.location.protocol === 'file:') {
+        console.log('Running from local file system. Some features may not work properly.');
+      }
+    </script>
   </body>
 </html>
