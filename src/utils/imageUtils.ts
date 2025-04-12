@@ -37,7 +37,7 @@ export const fallbackImages = {
 export const getLocalCarImage = (carId: string): string => {
   // Map car IDs to direct akfascar.com images
   const carImages: Record<string, string> = {
-    car1: 'https://akfascar.com/clio.jpg', // Renault Clio 5
+    car1: 'https://i.postimg.cc/Pf7xzZ1f/clio.jpg', // Renault Clio 5
     car2: 'https://i.postimg.cc/15zG4ps9/stepway.jpg', // Dacia Stepway
     car3: 'https://akfascar.com/sandero.jpg', // Dacia Sandero
     car4: 'https://i.postimg.cc/jj6wM5tg/dusr.jpg', // Dacia Duster

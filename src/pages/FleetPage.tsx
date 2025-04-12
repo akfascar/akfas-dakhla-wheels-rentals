@@ -13,7 +13,7 @@ const cars = {
     {
       id: 'car1',
       name: 'Renault Clio 5',
-      image: 'https://akfascar.com/clio.jpg',
+      image: 'https://i.postimg.cc/Pf7xzZ1f/clio.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -90,7 +90,7 @@ const cars = {
     {
       id: 'car1',
       name: 'Renault Clio 5',
-      image: 'https://akfascar.com/clio.jpg',
+      image: 'https://i.postimg.cc/Pf7xzZ1f/clio.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
@@ -129,7 +129,7 @@ const cars = {
     {
       id: 'car1',
       name: 'Renault Clio 5',
-      image: 'https://akfascar.com/clio.jpg',
+      image: 'https://i.postimg.cc/Pf7xzZ1f/clio.jpg',
       seats: 5,
       fuel: 'Gasoline',
       transmission: 'Manual',
