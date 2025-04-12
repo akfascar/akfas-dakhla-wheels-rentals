@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
@@ -29,7 +30,7 @@ const featuredCars = [
     airCondition: 'Available'
   },
   {
-    id: 'car3',
+    id: 'car4', // Change car ID from 'car3' to 'car4' to match the actual Duster ID
     name: 'Dacia Duster',
     image: getLocalCarImage('car4'),
     seats: 5,
