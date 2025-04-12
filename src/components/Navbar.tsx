@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -8,11 +8,22 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
+  const [basePath, setBasePath] = useState('./');
+
+  useEffect(() => {
+    // Get the base URL from the global variable or default to './'
+    setBasePath(window.__APP_BASE_URL || './');
+    console.log("Navbar using base path:", window.__APP_BASE_URL || './');
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
-  // Use root-relative paths for images to work on any domain
-  const logoPath = logoError ? './placeholder.svg' : './images/logo.jpg';
+  // Use base-relative paths for images to work on any domain
+  const logoPath = logoError 
+    ? `${basePath}placeholder.svg` 
+    : `${basePath}images/logo.jpg`;
+  
+  console.log("Using logo path:", logoPath);
   
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm">
@@ -27,6 +38,10 @@ const Navbar = () => {
                 console.error("Logo failed to load", e);
                 setLogoError(true);
                 e.currentTarget.onerror = null;
+                // Try with absolute fallback as last resort
+                if (logoError) {
+                  e.currentTarget.src = '/placeholder.svg';
+                }
               }}
             />
           </Link>

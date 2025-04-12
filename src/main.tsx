@@ -8,10 +8,23 @@ const isFileProtocol = () => {
   return window.location.protocol === 'file:';
 };
 
+// Function to get the base URL for assets
+const getBaseUrl = () => {
+  // For GitHub Pages and custom domains, we need to detect if we're in a subdirectory
+  const path = window.location.pathname;
+  // If path ends with .html or has no trailing slash, we're likely in a GitHub Pages environment
+  if (path.indexOf('.html') > -1 || (path !== '/' && !path.endsWith('/'))) {
+    return './';
+  }
+  return '/';
+};
+
 // Make sure the DOM is loaded before rendering
 document.addEventListener('DOMContentLoaded', () => {
-  // Add a console log to check if the script is running
   console.log("DOM Content Loaded, initializing application");
+  console.log("Current URL:", window.location.href);
+  console.log("Protocol:", window.location.protocol);
+  console.log("Pathname:", window.location.pathname);
   
   const rootElement = document.getElementById("root");
   if (rootElement) {
@@ -24,11 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
       // Create environment variables for debugging without using global window property
       const appEnv = {
         isCustomDomain: true,
-        baseUrl: window.location.pathname.indexOf('.html') > -1 ? './' : '/',
+        baseUrl: getBaseUrl(),
         isFileProtocol: isFileProtocol()
       };
       
       console.log("Environment:", appEnv);
+      
+      // Set a global property that components can access for asset paths
+      window.__APP_BASE_URL = appEnv.baseUrl;
       
       createRoot(rootElement).render(<App />);
       console.log("App rendered successfully");
@@ -53,3 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('error', (event) => {
   console.error("Global error caught:", event.error || event.message);
 });
+
+// Add type declaration for window
+declare global {
+  interface Window {
+    __APP_BASE_URL: string;
+  }
+}
