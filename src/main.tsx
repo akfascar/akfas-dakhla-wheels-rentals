@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Create environment variables for debugging without using global window property
       const appEnv = {
         isCustomDomain: true,
-        baseUrl: '/',
+        baseUrl: window.location.pathname.indexOf('.html') > -1 ? './' : '/',
         isFileProtocol: isFileProtocol()
       };
       
@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>An error occurred while loading the application.</p>
           <p>This site needs to be hosted on a web server to function properly.</p>
           <p>Error details: ${error instanceof Error ? error.message : 'Unknown error'}</p>
+          <p>If you are seeing this message on a custom domain, try refreshing the page or contact the site administrator.</p>
         </div>
       `;
     }

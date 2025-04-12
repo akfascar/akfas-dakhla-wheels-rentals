@@ -11,13 +11,16 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
+  // Use root-relative paths for images to work on any domain
+  const logoPath = logoError ? './placeholder.svg' : './images/logo.jpg';
+  
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src={logoError ? '/placeholder.svg' : '/images/logo.jpg'} 
+              src={logoPath} 
               alt="AKFAS Car Rental Logo" 
               className="h-12 w-auto"
               onError={(e) => {
