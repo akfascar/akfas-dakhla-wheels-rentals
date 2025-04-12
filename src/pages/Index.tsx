@@ -23,7 +23,7 @@ const featuredCars = [
   {
     id: 'car2',
     name: 'Dacia Stepway',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070',
+    image: 'https://akfascar.com/stepway.jpg',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
