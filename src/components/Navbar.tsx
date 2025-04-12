@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -8,15 +7,11 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
-  const [logoPath, setLogoPath] = useState('./images/logo.jpg');
+  const [logoPath, setLogoPath] = useState('https://akfascar.com/logo.jpg');
 
   useEffect(() => {
-    // Get the base URL from the global variable or default to './'
-    const basePath = window.__APP_BASE_URL || './';
-    const path = `${basePath}images/logo.jpg`.replace('//', '/');
-    setLogoPath(path);
-    console.log("Navbar using logo path:", path);
-  }, []);
+    console.log("Navbar using logo path:", logoPath);
+  }, [logoPath]);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
