@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
-import { CalendarIcon } from 'lucide-react';
+import { CalendarIcon, MessageCircle } from 'lucide-react';
 import { Calendar } from '@/components/ui/calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { format } from 'date-fns';
@@ -46,9 +46,7 @@ const WhatsAppForm: React.FC<WhatsAppFormProps> = ({ selectedCar, cars }) => {
     },
   });
 
-  const onSubmit = (data: FormValues) => {
-    setIsSubmitting(true);
-    
+  const handleWhatsAppRedirect = (data: FormValues) => {
     // Format the dates
     const formattedPickupDate = format(data.pickupDate, 'MMM dd, yyyy');
     const formattedReturnDate = format(data.returnDate, 'MMM dd, yyyy');
@@ -68,18 +66,26 @@ const WhatsAppForm: React.FC<WhatsAppFormProps> = ({ selectedCar, cars }) => {
     // Construct the WhatsApp URL with the Moroccan country code
     const whatsappUrl = `https://wa.me/212612345678?text=${message}`;
     
-    // Show success message
+    // Redirect to WhatsApp
+    window.open(whatsappUrl, '_blank');
+    
+    // Reset form
+    form.reset();
+    setIsSubmitting(false);
+  };
+
+  const onSubmit = (data: FormValues) => {
+    setIsSubmitting(true);
+    
     toast({
-      title: "Reservation Submitted",
+      title: "Preparing Your Reservation",
       description: "You'll be redirected to WhatsApp to complete your booking.",
     });
     
-    // Redirect to WhatsApp
+    // Small delay to allow toast to show
     setTimeout(() => {
-      window.open(whatsappUrl, '_blank');
-      setIsSubmitting(false);
-      form.reset();
-    }, 1000);
+      handleWhatsAppRedirect(data);
+    }, 800);
   };
 
   return (
@@ -251,10 +257,15 @@ const WhatsAppForm: React.FC<WhatsAppFormProps> = ({ selectedCar, cars }) => {
         
         <Button 
           type="submit" 
-          className="w-full bg-akfas-accent hover:bg-akfas-accent/90"
+          className="w-full bg-green-600 hover:bg-green-700 text-white"
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Processing..." : "Reserve via WhatsApp"}
+          {isSubmitting ? "Processing..." : (
+            <>
+              <MessageCircle className="mr-2" />
+              Reserve via WhatsApp
+            </>
+          )}
         </Button>
       </form>
     </Form>
