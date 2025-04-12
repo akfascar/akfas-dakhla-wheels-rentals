@@ -23,12 +23,16 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: 'dist',
+    assetsDir: 'assets',
     assetsInlineLimit: 0, // Don't inline assets as base64
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom']
-        }
+        },
+        assetFileNames: 'assets/[name].[hash][extname]',
+        chunkFileNames: 'assets/[name].[hash].js',
+        entryFileNames: 'assets/[name].[hash].js',
       }
     }
   }

@@ -8,15 +8,15 @@ const isFileProtocol = () => {
   return window.location.protocol === 'file:';
 };
 
-// Function to get the base URL for assets
+// Function to get the base URL for assets - simplified and more robust
 const getBaseUrl = () => {
-  // For GitHub Pages and custom domains, we need to detect if we're in a subdirectory
-  const path = window.location.pathname;
-  // If path ends with .html or has no trailing slash, we're likely in a GitHub Pages environment
-  if (path.indexOf('.html') > -1 || (path !== '/' && !path.endsWith('/'))) {
-    return './';
+  // For local development, GitHub Pages and custom domains
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    return '/';
   }
-  return '/';
+  
+  // For production on GitHub Pages or custom domain, use relative paths
+  return './';
 };
 
 // Make sure the DOM is loaded before rendering
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("Current URL:", window.location.href);
   console.log("Protocol:", window.location.protocol);
   console.log("Pathname:", window.location.pathname);
+  console.log("Hostname:", window.location.hostname);
   
   const rootElement = document.getElementById("root");
   if (rootElement) {
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
       
       console.log("Environment:", appEnv);
+      console.log("Base URL for assets:", appEnv.baseUrl);
       
       // Set a global property that components can access for asset paths
       window.__APP_BASE_URL = appEnv.baseUrl;

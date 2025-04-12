@@ -18,10 +18,10 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
-  // Use base-relative paths for images to work on any domain
+  // Always use relative paths for images
   const logoPath = logoError 
-    ? `${basePath}placeholder.svg` 
-    : `${basePath}images/logo.jpg`;
+    ? `placeholder.svg` 
+    : `images/logo.jpg`;
   
   console.log("Using logo path:", logoPath);
   
@@ -35,13 +35,11 @@ const Navbar = () => {
               alt="AKFAS Car Rental Logo" 
               className="h-12 w-auto"
               onError={(e) => {
-                console.error("Logo failed to load", e);
+                console.error("Logo failed to load:", e);
                 setLogoError(true);
                 e.currentTarget.onerror = null;
-                // Try with absolute fallback as last resort
-                if (logoError) {
-                  e.currentTarget.src = '/placeholder.svg';
-                }
+                // Fallback to absolute path as last resort
+                e.currentTarget.src = 'placeholder.svg';
               }}
             />
           </Link>

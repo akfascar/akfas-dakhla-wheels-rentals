@@ -9,11 +9,12 @@ import { Link } from 'react-router-dom';
 import { Check, MapPin, Car, CreditCard, Clock, Navigation, MessageCircle } from 'lucide-react';
 import LanguageSelector from '@/components/LanguageSelector';
 
+// Use relative paths for images
 const featuredCars = [
   {
     id: 'car1',
     name: 'Renault Clio 5',
-    image: '/images/cars/clio.jpg',
+    image: './images/cars/clio.jpg',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -22,7 +23,7 @@ const featuredCars = [
   {
     id: 'car2',
     name: 'Dacia Stepway',
-    image: '/images/cars/stepway.jpg',
+    image: './images/cars/stepway.jpg',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
@@ -31,7 +32,7 @@ const featuredCars = [
   {
     id: 'car3',
     name: 'Dacia Duster',
-    image: '/images/cars/duster.jpg',
+    image: './images/cars/duster.jpg',
     seats: 5,
     fuel: 'Diesel',
     transmission: 'Automatic',
@@ -51,7 +52,7 @@ const Index = () => {
       <Hero
         title="Explore Dakhla with Comfort and Style"
         subtitle="Discover the beauty of Dakhla with our premium car rental service at affordable prices"
-        backgroundImage="/images/dakhla-bg.jpg"
+        backgroundImage="./images/dakhla-bg.jpg"
         buttonText="Reserve Now"
         buttonLink="/reserve"
       />
@@ -160,9 +161,14 @@ const Index = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src="/images/dakhla/peninsula.jpg" 
+                  src="./images/dakhla/peninsula.jpg" 
                   alt="Dakhla Peninsula" 
                   className="rounded-lg shadow-xl w-full h-auto object-cover aspect-[4/3]"
+                  onError={(e) => {
+                    console.error("Image failed to load:", e.currentTarget.src);
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = "./placeholder.svg";
+                  }}
                 />
                 <div className="absolute -bottom-5 -left-5 bg-white p-4 rounded-lg shadow-lg flex items-center space-x-3">
                   <MapPin className="h-10 w-10 text-akfas-accent" />
