@@ -14,7 +14,7 @@ const featuredCars = [
   {
     id: 'car1',
     name: 'Renault Clio 5',
-    image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?q=80&w=2070',
+    image: 'https://akfascar.com/clio.jpg',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
