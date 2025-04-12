@@ -1,19 +1,22 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Flag, Globe } from 'lucide-react';
+import { Globe } from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { LanguageCode } from '@/utils/translations';
 
 type Language = {
-  code: string;
+  code: LanguageCode;
   name: string;
   nativeName: string;
   flag: React.ReactNode;
+  direction: 'ltr' | 'rtl';
 };
 
 const languages: Language[] = [
@@ -22,34 +25,40 @@ const languages: Language[] = [
     name: 'English',
     nativeName: 'English',
     flag: <span className="mr-2">🇬🇧</span>,
+    direction: 'ltr',
   },
   {
     code: 'fr',
     name: 'French',
     nativeName: 'Français',
     flag: <span className="mr-2">🇫🇷</span>,
+    direction: 'ltr',
   },
   {
     code: 'ar',
     name: 'Arabic',
     nativeName: 'العربية',
     flag: <span className="mr-2">🇲🇦</span>,
+    direction: 'rtl',
   },
   {
     code: 'es',
     name: 'Spanish',
     nativeName: 'Español',
     flag: <span className="mr-2">🇪🇸</span>,
+    direction: 'ltr',
   },
 ];
 
 const LanguageSelector = () => {
-  const [currentLanguage, setCurrentLanguage] = React.useState(languages[0]);
+  const { language, setLanguage } = useLanguage();
+  
+  // Find the current language object
+  const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
 
-  const handleLanguageChange = (language: Language) => {
-    setCurrentLanguage(language);
-    // In a real app, this would change the language throughout the application
-    console.log(`Language changed to ${language.name}`);
+  const handleLanguageChange = (selectedLanguage: Language) => {
+    setLanguage(selectedLanguage.code);
+    console.log(`Language changed to ${selectedLanguage.name}`);
   };
 
   return (
@@ -62,15 +71,17 @@ const LanguageSelector = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {languages.map((language) => (
+        {languages.map((lang) => (
           <DropdownMenuItem
-            key={language.code}
-            onClick={() => handleLanguageChange(language)}
+            key={lang.code}
+            onClick={() => handleLanguageChange(lang)}
             className="flex items-center cursor-pointer"
           >
-            {language.flag}
-            <span>{language.nativeName}</span>
-            {language.code === currentLanguage.code && (
+            {lang.flag}
+            <span className={lang.direction === 'rtl' ? 'font-arabic' : ''}>
+              {lang.nativeName}
+            </span>
+            {lang.code === currentLanguage.code && (
               <span className="ml-2 rounded-full w-2 h-2 bg-green-500"></span>
             )}
           </DropdownMenuItem>

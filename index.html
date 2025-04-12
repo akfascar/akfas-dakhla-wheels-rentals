@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,6 +37,37 @@
         }
       }(window.location))
     </script>
+    
+    <!-- RTL support styles -->
+    <style>
+      body.rtl {
+        direction: rtl;
+        text-align: right;
+      }
+      
+      /* Flip margins and paddings for RTL */
+      body.rtl .mr-2 {
+        margin-right: 0 !important;
+        margin-left: 0.5rem !important;
+      }
+      
+      body.rtl .ml-1,
+      body.rtl .ml-2 {
+        margin-left: 0 !important;
+        margin-right: 0.25rem !important;
+      }
+      
+      /* Specific component styles for RTL */
+      body.rtl .flex-row {
+        flex-direction: row-reverse;
+      }
+      
+      /* Special exception for flags in language selector */
+      body.rtl .rtl-flag-exception {
+        margin-right: 0 !important;
+        margin-left: 0.5rem !important;
+      }
+    </style>
     
     <!-- Preload image check script -->
     <script type="text/javascript">

@@ -5,10 +5,12 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { fallbackImages } from '@/utils/imageUtils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoSrc, setLogoSrc] = useState<string>('./placeholder.svg');
+  const { t, language } = useLanguage();
   
   useEffect(() => {
     // Use the direct link to the logo
@@ -26,8 +28,12 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
+  // Add RTL class for the navbar based on language
+  const isRTL = language === 'ar';
+  const rtlClass = isRTL ? 'rtl' : '';
+  
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-sm">
+    <header className={`bg-white sticky top-0 z-50 shadow-sm ${rtlClass}`}>
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
@@ -45,12 +51,20 @@ const Navbar = () => {
           
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-akfas-blue hover:text-akfas-accent font-medium transition-colors">Home</Link>
-            <Link to="/fleet" className="text-akfas-blue hover:text-akfas-accent font-medium transition-colors">Our Fleet</Link>
-            <Link to="/dakhla" className="text-akfas-blue hover:text-akfas-accent font-medium transition-colors">About Dakhla</Link>
-            <Link to="/contact" className="text-akfas-blue hover:text-akfas-accent font-medium transition-colors">Contact</Link>
+            <Link to="/" className="text-akfas-blue hover:text-akfas-accent font-medium transition-colors">
+              {t('navbar.home')}
+            </Link>
+            <Link to="/fleet" className="text-akfas-blue hover:text-akfas-accent font-medium transition-colors">
+              {t('navbar.fleet')}
+            </Link>
+            <Link to="/dakhla" className="text-akfas-blue hover:text-akfas-accent font-medium transition-colors">
+              {t('navbar.dakhla')}
+            </Link>
+            <Link to="/contact" className="text-akfas-blue hover:text-akfas-accent font-medium transition-colors">
+              {t('navbar.contact')}
+            </Link>
             <Button asChild className="bg-akfas-accent hover:bg-akfas-accent/90">
-              <Link to="/reserve">Reserve Now</Link>
+              <Link to="/reserve">{t('navbar.reserve')}</Link>
             </Button>
           </nav>
           
@@ -71,31 +85,31 @@ const Navbar = () => {
               className="text-akfas-blue hover:text-akfas-accent py-2 font-medium transition-colors"
               onClick={toggleMenu}
             >
-              Home
+              {t('navbar.home')}
             </Link>
             <Link 
               to="/fleet" 
               className="text-akfas-blue hover:text-akfas-accent py-2 font-medium transition-colors"
               onClick={toggleMenu}
             >
-              Our Fleet
+              {t('navbar.fleet')}
             </Link>
             <Link 
               to="/dakhla" 
               className="text-akfas-blue hover:text-akfas-accent py-2 font-medium transition-colors"
               onClick={toggleMenu}
             >
-              About Dakhla
+              {t('navbar.dakhla')}
             </Link>
             <Link 
               to="/contact" 
               className="text-akfas-blue hover:text-akfas-accent py-2 font-medium transition-colors"
               onClick={toggleMenu}
             >
-              Contact
+              {t('navbar.contact')}
             </Link>
             <Button asChild className="bg-akfas-accent hover:bg-akfas-accent/90 w-full">
-              <Link to="/reserve" onClick={toggleMenu}>Reserve Now</Link>
+              <Link to="/reserve" onClick={toggleMenu}>{t('navbar.reserve')}</Link>
             </Button>
           </nav>
         </div>
