@@ -52,7 +52,7 @@ const Index = () => {
       <Hero
         title="Explore Dakhla with Comfort and Style"
         subtitle="Discover the beauty of Dakhla with our premium car rental service at affordable prices"
-        backgroundImage="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+        backgroundImage="https://akfascar.com/dak3.jpg"
         buttonText="Reserve Now"
         buttonLink="/reserve"
       />
