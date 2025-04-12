@@ -8,22 +8,34 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
-  const [basePath, setBasePath] = useState('./');
+  const [logoPath, setLogoPath] = useState('./images/logo.jpg');
 
   useEffect(() => {
     // Get the base URL from the global variable or default to './'
-    setBasePath(window.__APP_BASE_URL || './');
-    console.log("Navbar using base path:", window.__APP_BASE_URL || './');
+    const basePath = window.__APP_BASE_URL || './';
+    const path = `${basePath}images/logo.jpg`.replace('//', '/');
+    setLogoPath(path);
+    console.log("Navbar using logo path:", path);
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
-  // Always use relative paths for images
-  const logoPath = logoError 
-    ? `placeholder.svg` 
-    : `images/logo.jpg`;
-  
-  console.log("Using logo path:", logoPath);
+  const handleLogoError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    console.error("Logo failed to load:", e.currentTarget.src);
+    setLogoError(true);
+    e.currentTarget.onerror = null;
+    
+    // Try different paths as fallbacks
+    const fallbackPaths = [
+      './placeholder.svg',
+      '/placeholder.svg',
+      'placeholder.svg'
+    ];
+    
+    // Try the first fallback
+    e.currentTarget.src = fallbackPaths[0];
+    console.log("Trying fallback image:", fallbackPaths[0]);
+  };
   
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm">
@@ -34,13 +46,7 @@ const Navbar = () => {
               src={logoPath} 
               alt="AKFAS Car Rental Logo" 
               className="h-12 w-auto"
-              onError={(e) => {
-                console.error("Logo failed to load:", e);
-                setLogoError(true);
-                e.currentTarget.onerror = null;
-                // Fallback to absolute path as last resort
-                e.currentTarget.src = 'placeholder.svg';
-              }}
+              onError={handleLogoError}
             />
           </Link>
           

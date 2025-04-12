@@ -3,14 +3,14 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
-// Function to check if we're running from a file protocol
-const isFileProtocol = () => {
-  return window.location.protocol === 'file:';
-};
-
 // Function to get the base URL for assets - simplified and more robust
 const getBaseUrl = () => {
-  // For local development, GitHub Pages and custom domains
+  // For file protocol (local file system), GitHub Pages and custom domains
+  if (window.location.protocol === 'file:') {
+    return './';
+  }
+  
+  // For localhost development server
   if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
     return '/';
   }
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log("Protocol:", window.location.protocol);
   console.log("Pathname:", window.location.pathname);
   console.log("Hostname:", window.location.hostname);
+  console.log("Base Path:", getBaseUrl());
   
   const rootElement = document.getElementById("root");
   if (rootElement) {
@@ -35,18 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     try {
-      // Create environment variables for debugging without using global window property
-      const appEnv = {
-        isCustomDomain: true,
-        baseUrl: getBaseUrl(),
-        isFileProtocol: isFileProtocol()
-      };
-      
-      console.log("Environment:", appEnv);
-      console.log("Base URL for assets:", appEnv.baseUrl);
+      // Set base URL for the application to use for assets
+      const baseUrl = getBaseUrl();
+      console.log("Using base URL for assets:", baseUrl);
       
       // Set a global property that components can access for asset paths
-      window.__APP_BASE_URL = appEnv.baseUrl;
+      window.__APP_BASE_URL = baseUrl;
       
       createRoot(rootElement).render(<App />);
       console.log("App rendered successfully");
@@ -70,6 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
 // Add a global error handler
 window.addEventListener('error', (event) => {
   console.error("Global error caught:", event.error || event.message);
+  // Log image loading errors specifically
+  if (event.target && (event.target as HTMLElement).tagName === 'IMG') {
+    console.error(`Image failed to load: ${(event.target as HTMLImageElement).src}`);
+  }
 });
 
 // Add type declaration for window
