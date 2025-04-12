@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Users, Fuel, GaugeCircle, Wind } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
+import { getLocalCarImage } from '@/utils/imageUtils';
 
 interface CarCardProps {
   id: string;
@@ -24,13 +25,21 @@ const CarCard: React.FC<CarCardProps> = ({
   transmission,
   airCondition
 }) => {
+  // Use a reliable image source
+  const carImage = getLocalCarImage(id);
+  
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
       <div className="aspect-[16/9] overflow-hidden">
         <img
-          src={image}
+          src={carImage}
           alt={name}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          onError={(e) => {
+            console.log(`Image for ${name} failed to load, using fallback`);
+            e.currentTarget.onerror = null; // Prevent infinite loop
+            e.currentTarget.src = './placeholder.svg';
+          }}
         />
       </div>
       <CardContent className="pt-6">

@@ -4,33 +4,27 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { fallbackImages } from '@/utils/imageUtils';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [logoError, setLogoError] = useState(false);
+  const [logoSrc, setLogoSrc] = useState<string>('./placeholder.svg');
   
-  // Store the logo URL in a constant for consistency
-  const LOGO_URL = 'https://akfascar.com/logo.jpg';
-  const FALLBACK_LOGO = './placeholder.svg';
-
   useEffect(() => {
-    // Pre-load the image to check if it loads correctly
+    // Try to load the real logo but have a fallback ready
     const img = new Image();
     img.onload = () => {
-      console.log("Logo loaded successfully:", LOGO_URL);
-      setLogoError(false);
+      setLogoSrc('https://akfascar.com/logo.jpg');
+      console.log("Navbar logo loaded successfully");
     };
     img.onerror = () => {
-      console.error("Logo failed to load, using fallback:", FALLBACK_LOGO);
-      setLogoError(true);
+      setLogoSrc(fallbackImages.logo);
+      console.log("Navbar logo failed to load, using fallback");
     };
-    img.src = LOGO_URL;
+    img.src = 'https://akfascar.com/logo.jpg';
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  
-  // Use the actual logo if it loaded correctly, otherwise use fallback
-  const displayLogo = logoError ? FALLBACK_LOGO : LOGO_URL;
   
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm">
@@ -38,13 +32,13 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src={displayLogo} 
+              src={logoSrc} 
               alt="AKFAS Car Rental Logo" 
               className="h-12 w-auto"
               onError={(e) => {
                 console.error("Logo failed to load in render:", e.currentTarget.src);
                 e.currentTarget.onerror = null; // Prevent infinite loop
-                e.currentTarget.src = FALLBACK_LOGO;
+                e.currentTarget.src = fallbackImages.logo;
               }}
             />
           </Link>

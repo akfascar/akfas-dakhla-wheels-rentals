@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { MessageCircle } from 'lucide-react';
+import { fallbackImages } from '@/utils/imageUtils';
 
 interface HeroProps {
   title: string;
@@ -19,8 +20,24 @@ const Hero: React.FC<HeroProps> = ({
   buttonText,
   buttonLink
 }) => {
+  // Use a React state to manage background image with fallback
+  const [bgImage, setBgImage] = React.useState(backgroundImage);
+
+  React.useEffect(() => {
+    // Pre-load the image to check if it loads correctly
+    const img = new Image();
+    img.onload = () => {
+      console.log("Hero background loaded successfully:", backgroundImage);
+    };
+    img.onerror = () => {
+      console.error("Hero background failed to load, using fallback");
+      setBgImage(fallbackImages.landscape);
+    };
+    img.src = backgroundImage;
+  }, [backgroundImage]);
+
   const heroStyle = {
-    backgroundImage: `linear-gradient(to bottom, rgba(26, 58, 90, 0.6), rgba(26, 58, 90, 0.4)), url(${backgroundImage})`,
+    backgroundImage: `linear-gradient(to bottom, rgba(26, 58, 90, 0.6), rgba(26, 58, 90, 0.4)), url(${bgImage})`,
   };
 
   const openWhatsApp = () => {
