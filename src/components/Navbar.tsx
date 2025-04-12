@@ -8,30 +8,29 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoError, setLogoError] = useState(false);
-  const [logoPath, setLogoPath] = useState('./placeholder.svg');
+  
+  // Store the logo URL in a constant for consistency
+  const LOGO_URL = 'https://akfascar.com/logo.jpg';
+  const FALLBACK_LOGO = './placeholder.svg';
 
   useEffect(() => {
-    console.log("Navbar using logo path:", logoPath);
-  }, [logoPath]);
+    // Pre-load the image to check if it loads correctly
+    const img = new Image();
+    img.onload = () => {
+      console.log("Logo loaded successfully:", LOGO_URL);
+      setLogoError(false);
+    };
+    img.onerror = () => {
+      console.error("Logo failed to load, using fallback:", FALLBACK_LOGO);
+      setLogoError(true);
+    };
+    img.src = LOGO_URL;
+  }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
-  const handleLogoError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    console.error("Logo failed to load:", e.currentTarget.src);
-    setLogoError(true);
-    e.currentTarget.onerror = null;
-    
-    // Try different paths as fallbacks
-    const fallbackPaths = [
-      './placeholder.svg',
-      '/placeholder.svg',
-      'placeholder.svg'
-    ];
-    
-    // Try the first fallback
-    e.currentTarget.src = fallbackPaths[0];
-    console.log("Trying fallback image:", fallbackPaths[0]);
-  };
+  // Use the actual logo if it loaded correctly, otherwise use fallback
+  const displayLogo = logoError ? FALLBACK_LOGO : LOGO_URL;
   
   return (
     <header className="bg-white sticky top-0 z-50 shadow-sm">
@@ -39,10 +38,14 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src={logoPath} 
+              src={displayLogo} 
               alt="AKFAS Car Rental Logo" 
               className="h-12 w-auto"
-              onError={handleLogoError}
+              onError={(e) => {
+                console.error("Logo failed to load in render:", e.currentTarget.src);
+                e.currentTarget.onerror = null; // Prevent infinite loop
+                e.currentTarget.src = FALLBACK_LOGO;
+              }}
             />
           </Link>
           
