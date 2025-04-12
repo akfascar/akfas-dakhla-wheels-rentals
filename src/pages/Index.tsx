@@ -160,7 +160,7 @@ const Index = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src="/images/dakhla-hero.jpg" 
+                  src="https://akfascar.com/dak.png" 
                   alt="Dakhla Peninsula" 
                   className="rounded-lg shadow-xl w-full h-auto object-cover aspect-[4/3]"
                 />
