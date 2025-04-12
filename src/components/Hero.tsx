@@ -24,7 +24,7 @@ const Hero: React.FC<HeroProps> = ({
   };
 
   const openWhatsApp = () => {
-    window.open('https://wa.me/212612345678', '_blank');
+    window.open('https://wa.me/212661211237', '_blank');
   };
 
   return (

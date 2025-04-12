@@ -51,7 +51,7 @@ const Index = () => {
       <Hero
         title="Explore Dakhla with Comfort and Style"
         subtitle="Discover the beauty of Dakhla with our premium car rental service at affordable prices"
-        backgroundImage="https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?q=80&w=2070&auto=format&fit=crop"
+        backgroundImage="/images/dakhla-bg.jpg"
         buttonText="Reserve Now"
         buttonLink="/reserve"
       />
@@ -160,7 +160,7 @@ const Index = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?q=80&w=1000&auto=format&fit=crop" 
+                  src="/images/dakhla-hero.jpg" 
                   alt="Dakhla Peninsula" 
                   className="rounded-lg shadow-xl w-full h-auto object-cover aspect-[4/3]"
                 />
@@ -168,7 +168,7 @@ const Index = () => {
                   <MapPin className="h-10 w-10 text-akfas-accent" />
                   <div>
                     <p className="font-bold text-akfas-blue">Dakhla, Morocco</p>
-                    <p className="text-sm text-gray-600">Western Sahara</p>
+                    <p className="text-sm text-gray-600">Atlantic Coast</p>
                   </div>
                 </div>
               </div>
