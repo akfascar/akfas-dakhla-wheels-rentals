@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
@@ -21,7 +20,7 @@ const featuredCars = [
   {
     id: 'car2',
     name: 'Dacia Stepway',
-    image: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=800&auto=format&fit=crop',
+    image: 'https://akfascar.com/stepway.jpg',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
