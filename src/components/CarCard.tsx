@@ -9,7 +9,7 @@ interface CarCardProps {
   id: string;
   name: string;
   image: string;
-  price: number;
+  price?: number; // Made optional so existing code doesn't break
   seats: number;
   fuel: string;
   transmission: string;
@@ -20,7 +20,6 @@ const CarCard: React.FC<CarCardProps> = ({
   id,
   name,
   image,
-  price,
   seats,
   fuel,
   transmission,
@@ -36,13 +35,8 @@ const CarCard: React.FC<CarCardProps> = ({
         />
       </div>
       <CardContent className="pt-6">
-        <div className="flex justify-between items-center mb-3">
+        <div className="mb-3">
           <h3 className="text-xl font-bold text-akfas-blue">{name}</h3>
-          <div className="text-akfas-accent font-semibold">
-            <span className="text-sm">From</span>
-            <span className="text-xl ml-1">${price}</span>
-            <span className="text-sm">/day</span>
-          </div>
         </div>
         
         <div className="grid grid-cols-2 gap-3 text-gray-600">

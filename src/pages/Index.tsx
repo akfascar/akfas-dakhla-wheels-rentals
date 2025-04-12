@@ -10,33 +10,30 @@ import { Check, MapPin, ThumbsUp, Car, CreditCard, Clock, Navigation, MessageCir
 const featuredCars = [
   {
     id: 'car1',
-    name: 'Toyota RAV4',
-    image: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=800&auto=format&fit=crop',
-    price: 45,
+    name: 'Renault Clio 5',
+    image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=800&auto=format&fit=crop',
     seats: 5,
     fuel: 'Gasoline',
-    transmission: 'Automatic',
+    transmission: 'Manual',
     year: 2023
   },
   {
     id: 'car2',
-    name: 'Dacia Duster',
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=800&auto=format&fit=crop',
-    price: 35,
+    name: 'Dacia Stepway',
+    image: 'https://images.unsplash.com/photo-1609521263047-f8f205293f24?q=80&w=800&auto=format&fit=crop',
     seats: 5,
-    fuel: 'Diesel',
-    transmission: 'Manual',
+    fuel: 'Gasoline',
+    transmission: 'Automatic',
     year: 2022
   },
   {
     id: 'car3',
-    name: 'Hyundai Tucson',
-    image: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800&auto=format&fit=crop',
-    price: 50,
+    name: 'Dacia Duster',
+    image: 'https://images.unsplash.com/photo-1594013786645-1ea41dfdd173?q=80&w=800&auto=format&fit=crop',
     seats: 5,
-    fuel: 'Hybrid',
+    fuel: 'Diesel',
     transmission: 'Automatic',
-    year: 2023
+    year: 2022
   }
 ];
 
