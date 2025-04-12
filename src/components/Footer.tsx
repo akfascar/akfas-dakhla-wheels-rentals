@@ -1,10 +1,14 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Car, Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Car, Phone, Mail, MapPin, Facebook, Instagram, Twitter, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  
+  const handleWhatsAppRedirect = () => {
+    window.open('https://wa.me/212661211237', '_blank');
+  };
   
   return (
     <footer className="bg-akfas-blue text-white pt-12 pb-6">
@@ -64,7 +68,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Phone size={20} className="shrink-0" />
-                <span>+212 612-345-678</span>
+                <span>+212 661-211-237</span>
+              </li>
+              <li className="flex items-center space-x-3 cursor-pointer hover:text-akfas-accent" onClick={handleWhatsAppRedirect}>
+                <MessageCircle size={20} className="shrink-0" />
+                <span>WhatsApp Reservation</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="shrink-0" />

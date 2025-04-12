@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
@@ -266,7 +267,7 @@ const Index = () => {
               
               <div className="mt-6">
                 <Button 
-                  onClick={() => window.open('https://wa.me/212612345678', '_blank')}
+                  onClick={() => window.open('https://wa.me/212661211237', '_blank')}
                   className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold"
                 >
                   <MessageCircle className="mr-2" /> Contact via WhatsApp

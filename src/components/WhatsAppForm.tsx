@@ -63,8 +63,8 @@ const WhatsAppForm: React.FC<WhatsAppFormProps> = ({ selectedCar, cars }) => {
 *Message:* ${data.message || 'None'}`
     );
     
-    // Construct the WhatsApp URL with the Moroccan country code
-    const whatsappUrl = `https://wa.me/212612345678?text=${message}`;
+    // Construct the WhatsApp URL with the correct phone number
+    const whatsappUrl = `https://wa.me/212661211237?text=${message}`;
     
     // Redirect to WhatsApp
     window.open(whatsappUrl, '_blank');
