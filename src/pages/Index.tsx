@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
@@ -10,12 +9,11 @@ import { Check, MapPin, Car, CreditCard, Clock, Navigation, MessageCircle } from
 import LanguageSelector from '@/components/LanguageSelector';
 import { getLocalCarImage } from '@/utils/imageUtils';
 
-// Using working images from the fleet page
 const featuredCars = [
   {
     id: 'car1',
     name: 'Renault Clio 5',
-    image: getLocalCarImage('car1'), // Use utility function for consistent image handling
+    image: getLocalCarImage('car1'),
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -24,7 +22,7 @@ const featuredCars = [
   {
     id: 'car2',
     name: 'Dacia Stepway',
-    image: getLocalCarImage('car2'), // Use utility function for consistent image handling
+    image: getLocalCarImage('car2'),
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
@@ -33,7 +31,7 @@ const featuredCars = [
   {
     id: 'car3',
     name: 'Dacia Duster',
-    image: getLocalCarImage('car4'), // Use utility function for Duster (car4)
+    image: getLocalCarImage('car4'),
     seats: 5,
     fuel: 'Diesel',
     transmission: 'Automatic',
@@ -49,7 +47,6 @@ const Index = () => {
       </div>
       <Navbar />
       
-      {/* Hero Section */}
       <Hero
         title="Explore Dakhla with Comfort and Style"
         subtitle="Discover the beauty of Dakhla with our premium car rental service at affordable prices"
@@ -58,7 +55,6 @@ const Index = () => {
         buttonLink="/reserve"
       />
       
-      {/* About Section */}
       <section className="py-16 bg-white" id="about">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -102,7 +98,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Featured Cars Section */}
       <section className="py-16 bg-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -126,7 +121,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Dakhla Preview Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -162,7 +156,7 @@ const Index = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src="https://images.unsplash.com/photo-1517404215738-15263e9f9178?q=80&w=2070" 
+                  src="https://i.postimg.cc/6pnyQ32W/dak3.jpg" 
                   alt="Dakhla Peninsula" 
                   className="rounded-lg shadow-xl w-full h-auto object-cover aspect-[4/3]"
                   onError={(e) => {
@@ -184,7 +178,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* CTA Section */}
       <section className="py-16 bg-akfas-blue text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Ready to Explore Dakhla?</h2>
@@ -197,7 +190,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Map Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
