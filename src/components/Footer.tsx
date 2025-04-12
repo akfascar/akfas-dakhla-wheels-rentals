@@ -76,7 +76,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3">
                 <Mail size={20} className="shrink-0" />
-                <span>info@akfascarrental.com</span>
+                <span>Akfasrentacar@gmail.com</span>
               </li>
             </ul>
           </div>
