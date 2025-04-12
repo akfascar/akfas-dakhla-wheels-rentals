@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Hero from '@/components/Hero';
 import Navbar from '@/components/Navbar';
@@ -6,9 +5,8 @@ import Footer from '@/components/Footer';
 import CarCard from '@/components/CarCard';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check, MapPin, ThumbsUp, Car, CreditCard, Clock } from 'lucide-react';
+import { Check, MapPin, ThumbsUp, Car, CreditCard, Clock, Navigation, MessageCircle } from 'lucide-react';
 
-// Mock data for cars
 const featuredCars = [
   {
     id: 'car1',
@@ -240,6 +238,59 @@ const Index = () => {
           <Button asChild size="lg" className="bg-akfas-accent hover:bg-akfas-accent/90 text-white font-semibold px-8 text-lg">
             <Link to="/reserve">Reserve Your Car</Link>
           </Button>
+        </div>
+      </section>
+      
+      {/* Map Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Find Us</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              We are conveniently located in the heart of Dakhla. Visit us or contact us to arrange a car delivery to your location.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            <div className="lg:col-span-1 bg-akfas-light p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4 text-akfas-blue flex items-center">
+                <MapPin className="mr-2" /> Our Location
+              </h3>
+              <p className="text-gray-700 mb-4">
+                AKFAS Rent a Car<br />
+                Main Street, Dakhla City Center<br />
+                Dakhla, Morocco
+              </p>
+              <div className="flex items-center space-x-2 text-akfas-blue">
+                <Navigation size={18} />
+                <span className="font-semibold">GPS Coordinates:</span> 
+                <span>23.702494, -15.9280865</span>
+              </div>
+              
+              <div className="mt-6">
+                <Button 
+                  onClick={() => window.open('https://wa.me/212612345678', '_blank')}
+                  className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold"
+                >
+                  <MessageCircle className="mr-2" /> Contact via WhatsApp
+                </Button>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-2 h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-lg">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.098793265112!2d-15.930675211191493!3d23.702493894772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc224987da8d0d63%3A0x11628ee4e3e567f2!2sAKFAS%20rent%20a%20car!5e0!3m2!1sen!2sus!4v1681215345678!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="AKFAS Car Rental Location"
+                className="rounded-lg"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </section>
       
