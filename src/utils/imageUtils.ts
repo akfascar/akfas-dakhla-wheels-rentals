@@ -35,14 +35,14 @@ export const fallbackImages = {
  * This will use local images rather than external ones that might fail
  */
 export const getLocalCarImage = (carId: string): string => {
-  // Map car IDs to locally available placeholder images for now
+  // Map car IDs to better car model images
   const carImages: Record<string, string> = {
-    car1: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800&auto=format&fit=crop',
-    car2: 'https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800&auto=format&fit=crop',
-    car3: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&auto=format&fit=crop',
-    car4: 'https://images.unsplash.com/photo-1605893477799-b99e3b8b93fe?w=800&auto=format&fit=crop',
-    car5: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&auto=format&fit=crop',
-    car6: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&auto=format&fit=crop',
+    car1: 'https://images.unsplash.com/photo-1665887080829-77e1646b1c04?w=800&auto=format&fit=crop', // Renault Clio 5
+    car2: 'https://images.unsplash.com/photo-1630080642366-21cc2930ec3e?w=800&auto=format&fit=crop', // Dacia Stepway
+    car3: 'https://images.unsplash.com/photo-1619775761567-7b736e9de9d4?w=800&auto=format&fit=crop', // Dacia Sandero
+    car4: 'https://images.unsplash.com/photo-1647470221285-0e85668aa3e9?w=800&auto=format&fit=crop', // Dacia Duster
+    car5: 'https://images.unsplash.com/photo-1627076929474-e50898a4f265?w=800&auto=format&fit=crop', // Dacia Logan
+    car6: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&auto=format&fit=crop', // Skoda Fabia
   };
 
   return carImages[carId] || fallbackImages.car;

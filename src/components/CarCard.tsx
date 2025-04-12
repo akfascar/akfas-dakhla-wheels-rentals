@@ -25,7 +25,7 @@ const CarCard: React.FC<CarCardProps> = ({
   transmission,
   airCondition
 }) => {
-  // Use a reliable image source
+  // Use the updated car image sources
   const carImage = getLocalCarImage(id);
   
   return (
@@ -33,7 +33,7 @@ const CarCard: React.FC<CarCardProps> = ({
       <div className="aspect-[16/9] overflow-hidden">
         <img
           src={carImage}
-          alt={name}
+          alt={`${name} car rental in Dakhla`}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
           onError={(e) => {
             console.log(`Image for ${name} failed to load, using fallback`);
