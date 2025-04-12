@@ -25,7 +25,7 @@ export const getImageWithFallback = (
  */
 export const fallbackImages = {
   car: './placeholder.svg',
-  logo: './placeholder.svg',
+  logo: 'https://i.postimg.cc/fL4C9k58/f760973e-a8df-45fa-88df-4bbbec69fbd0.jpg',
   location: 'https://images.unsplash.com/photo-1487252665478-49b61b47f302',
   landscape: 'https://images.unsplash.com/photo-1485833077593-4278bba3f11f',
 };
@@ -38,9 +38,9 @@ export const getLocalCarImage = (carId: string): string => {
   // Map car IDs to direct akfascar.com images
   const carImages: Record<string, string> = {
     car1: 'https://akfascar.com/clio.jpg', // Renault Clio 5
-    car2: 'https://images.unsplash.com/photo-1630080642366-21cc2930ec3e?w=800&auto=format&fit=crop', // Dacia Stepway
+    car2: 'https://i.postimg.cc/1RGCD0kw/sandero.jpg', // Dacia Stepway
     car3: 'https://akfascar.com/sandero.jpg', // Dacia Sandero
-    car4: 'https://images.unsplash.com/photo-1647470221285-0e85668aa3e9?w=800&auto=format&fit=crop', // Dacia Duster
+    car4: 'https://i.postimg.cc/HL83nb0J/duster.jpg', // Dacia Duster
     car5: 'https://akfascar.com/logan.jpg', // Dacia Logan
     car6: 'https://akfascar.com/skoda.jpg', // Skoda Fabia
   };

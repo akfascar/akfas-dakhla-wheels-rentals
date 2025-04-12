@@ -14,14 +14,14 @@ const Navbar = () => {
     // Use the direct link to the logo
     const img = new Image();
     img.onload = () => {
-      setLogoSrc('https://akfascar.com/logo.jpg');
+      setLogoSrc('https://i.postimg.cc/fL4C9k58/f760973e-a8df-45fa-88df-4bbbec69fbd0.jpg');
       console.log("Navbar logo loaded successfully");
     };
     img.onerror = () => {
       setLogoSrc(fallbackImages.logo);
       console.log("Navbar logo failed to load, using fallback");
     };
-    img.src = 'https://akfascar.com/logo.jpg';
+    img.src = 'https://i.postimg.cc/fL4C9k58/f760973e-a8df-45fa-88df-4bbbec69fbd0.jpg';
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
