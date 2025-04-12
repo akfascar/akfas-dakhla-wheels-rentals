@@ -16,7 +16,7 @@ const DakhlaPage = () => {
       <Hero
         title="Discover Dakhla"
         subtitle="A paradise between desert and ocean in the Western Sahara of Morocco"
-        backgroundImage="https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?q=80&w=2070&auto=format&fit=crop"
+        backgroundImage="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
         buttonText="Reserve a Car to Explore"
         buttonLink="/reserve"
       />
@@ -116,7 +116,7 @@ const DakhlaPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-akfas-light p-6 rounded-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?q=80&w=1000&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
                 alt="Dakhla Bay" 
                 className="w-full h-60 object-cover rounded-lg mb-6"
               />
@@ -132,7 +132,7 @@ const DakhlaPage = () => {
             
             <div className="bg-akfas-light p-6 rounded-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?q=80&w=1000&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
                 alt="White Dunes" 
                 className="w-full h-60 object-cover rounded-lg mb-6"
               />
@@ -148,7 +148,7 @@ const DakhlaPage = () => {
             
             <div className="bg-akfas-light p-6 rounded-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1482881497185-d4a9ddbe4151?q=80&w=1000&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
                 alt="Sahara Desert" 
                 className="w-full h-60 object-cover rounded-lg mb-6"
               />
@@ -164,7 +164,7 @@ const DakhlaPage = () => {
             
             <div className="bg-akfas-light p-6 rounded-lg overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1471194402529-8e0f5a675de6?q=80&w=1000&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
                 alt="Oyster Farms" 
                 className="w-full h-60 object-cover rounded-lg mb-6"
               />

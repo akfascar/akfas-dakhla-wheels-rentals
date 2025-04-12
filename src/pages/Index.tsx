@@ -9,12 +9,12 @@ import { Link } from 'react-router-dom';
 import { Check, MapPin, Car, CreditCard, Clock, Navigation, MessageCircle } from 'lucide-react';
 import LanguageSelector from '@/components/LanguageSelector';
 
-// Use relative paths for images
+// Using Unsplash images for cars
 const featuredCars = [
   {
     id: 'car1',
     name: 'Renault Clio 5',
-    image: './images/cars/clio.jpg',
+    image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Manual',
@@ -23,7 +23,7 @@ const featuredCars = [
   {
     id: 'car2',
     name: 'Dacia Stepway',
-    image: './images/cars/stepway.jpg',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
     seats: 5,
     fuel: 'Gasoline',
     transmission: 'Automatic',
@@ -32,7 +32,7 @@ const featuredCars = [
   {
     id: 'car3',
     name: 'Dacia Duster',
-    image: './images/cars/duster.jpg',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
     seats: 5,
     fuel: 'Diesel',
     transmission: 'Automatic',
@@ -52,7 +52,7 @@ const Index = () => {
       <Hero
         title="Explore Dakhla with Comfort and Style"
         subtitle="Discover the beauty of Dakhla with our premium car rental service at affordable prices"
-        backgroundImage="./images/dakhla-bg.jpg"
+        backgroundImage="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
         buttonText="Reserve Now"
         buttonLink="/reserve"
       />
@@ -161,7 +161,7 @@ const Index = () => {
             <div className="order-1 lg:order-2">
               <div className="relative">
                 <img 
-                  src="./images/dakhla/peninsula.jpg" 
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
                   alt="Dakhla Peninsula" 
                   className="rounded-lg shadow-xl w-full h-auto object-cover aspect-[4/3]"
                   onError={(e) => {
