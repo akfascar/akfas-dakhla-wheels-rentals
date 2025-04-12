@@ -6,7 +6,8 @@ import Footer from '@/components/Footer';
 import CarCard from '@/components/CarCard';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { Check, MapPin, ThumbsUp, Car, CreditCard, Clock, Navigation, MessageCircle } from 'lucide-react';
+import { Check, MapPin, Car, CreditCard, Clock, Navigation, MessageCircle } from 'lucide-react';
+import LanguageSelector from '@/components/LanguageSelector';
 
 const featuredCars = [
   {
@@ -41,6 +42,9 @@ const featuredCars = [
 const Index = () => {
   return (
     <div className="flex flex-col min-h-screen">
+      <div className="absolute top-4 right-4 z-50">
+        <LanguageSelector />
+      </div>
       <Navbar />
       
       {/* Hero Section */}
@@ -167,59 +171,6 @@ const Index = () => {
                     <p className="text-sm text-gray-600">Western Sahara</p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Testimonials Section */}
-      <section className="py-16 bg-akfas-light">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="section-title">What Our Customers Say</h2>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-              Don't just take our word for it. See what our satisfied customers have to say about their experience with AKFAS Car Rental.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
-              <div className="flex justify-center mb-4">
-                <ThumbsUp className="h-12 w-12 text-akfas-accent" />
-              </div>
-              <p className="text-gray-700 italic mb-4">
-                "Great service! The car was in perfect condition and the pickup process was smooth. Highly recommend for exploring Dakhla."
-              </p>
-              <div className="text-center">
-                <p className="font-semibold text-akfas-blue">Ahmed K.</p>
-                <p className="text-sm text-gray-600">Casablanca, Morocco</p>
-              </div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
-              <div className="flex justify-center mb-4">
-                <ThumbsUp className="h-12 w-12 text-akfas-accent" />
-              </div>
-              <p className="text-gray-700 italic mb-4">
-                "AKFAS provided us with a reliable car for our week-long stay in Dakhla. Their staff was friendly and the prices were very reasonable."
-              </p>
-              <div className="text-center">
-                <p className="font-semibold text-akfas-blue">Sophie M.</p>
-                <p className="text-sm text-gray-600">Paris, France</p>
-              </div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow hover:shadow-md transition-shadow">
-              <div className="flex justify-center mb-4">
-                <ThumbsUp className="h-12 w-12 text-akfas-accent" />
-              </div>
-              <p className="text-gray-700 italic mb-4">
-                "The WhatsApp reservation process was super easy, and the car was exactly what we needed for our desert adventures. Will use again!"
-              </p>
-              <div className="text-center">
-                <p className="font-semibold text-akfas-blue">Carlos R.</p>
-                <p className="text-sm text-gray-600">Madrid, Spain</p>
               </div>
             </div>
           </div>
