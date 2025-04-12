@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
     try {
       // Create environment variables for debugging without using global window property
       const appEnv = {
-        baseUrl: window.location.origin + window.location.pathname.replace(/\/[^/]*$/, '/'),
+        isCustomDomain: true,
+        baseUrl: '/',
         isFileProtocol: isFileProtocol()
       };
       

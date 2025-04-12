@@ -17,7 +17,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <img 
-              src={logoError ? './placeholder.svg' : './images/logo.jpg'} 
+              src={logoError ? '/placeholder.svg' : '/images/logo.jpg'} 
               alt="AKFAS Car Rental Logo" 
               className="h-12 w-auto"
               onError={(e) => {
